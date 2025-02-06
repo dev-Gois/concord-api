@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_31_032241) do
   enable_extension "plpgsql"
 
   create_table "chat_rooms", force: :cascade do |t|
-    t.string "name"
-    t.integer "chat_type"
+    t.string "name", null: false
+    t.integer "chat_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
