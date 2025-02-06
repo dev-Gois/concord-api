@@ -51,3 +51,7 @@ group :test do
 end
 
 gem "jsonapi-serializer", "~> 2.2"
+
+gem "jwt", "~> 2.10"
+
+gem "dotenv", "~> 3.1"
