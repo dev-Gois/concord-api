@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[register login]
+
   def register
     result = Users::Organizers::Register.call(user_params: register_params)
     if result.success?
