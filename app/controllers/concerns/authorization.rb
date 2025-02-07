@@ -10,7 +10,8 @@ module Authorization
   end
 
   def current_user
-    return false if headers["Authorization"].blank?
+    return false if request.headers["Authorization"].blank?
+
     result = Users::Interactors::Authorization::DecodeToken.call(jwt_token: token)
 
     if result.success?
@@ -21,7 +22,7 @@ module Authorization
   end
 
   def token
-    headers["Authorization"].split(" ").last
+    request.headers["Authorization"].split(" ").last
   end
 
   def render_unauthorized
