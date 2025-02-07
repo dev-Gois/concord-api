@@ -5,7 +5,8 @@ module Users
 
       organize(
         Users::Interactors::Find,
-        Users::Interactors::Authenticate
+        Users::Interactors::Authenticate,
+        Users::Interactors::Authorization::EncodeToken
       )
     end
   end

@@ -5,7 +5,8 @@ module Users
 
       organize(
         Users::Interactors::ValidateParams,
-        Users::Interactors::Register
+        Users::Interactors::Register,
+        Users::Interactors::Authorization::EncodeToken
       )
     end
   end

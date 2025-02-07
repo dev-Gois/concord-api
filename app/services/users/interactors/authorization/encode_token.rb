@@ -8,6 +8,8 @@ module Users
 
         def call
           context.jwt_token = generate_jwt_token
+        rescue StandardError => e
+          context.fail!(message: e.message)
         end
 
         private

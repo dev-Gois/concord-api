@@ -7,7 +7,7 @@ module Users
 
       def call
         raise "Email is required" unless user_params[:email].present?
-        raise "User not found" unless find_user
+        raise "User not found" if find_user.nil?
         context.user = find_user
       rescue StandardError => e
         context.fail!(message: e.message)
