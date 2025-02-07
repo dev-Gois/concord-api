@@ -6,7 +6,6 @@ module ChatRooms
       delegate :user, :chat_room_params, to: :context
 
       def call
-     
         raise "User is required" unless user
         raise "Chat room name is required" unless chat_room_params[:name].present?
         raise "Chat room type is required" unless chat_room_params[:chat_type].present?

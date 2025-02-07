@@ -1,7 +1,5 @@
 class ChatRoomsController < ApplicationController
-  
     def create
-        
         result = ChatRooms::Interactors::Create.call(user: current_user, chat_room_params: chat_room_params)
 
         if result.success?
@@ -16,5 +14,4 @@ class ChatRoomsController < ApplicationController
     def chat_room_params
         params.require(:chat_room).permit(:name, :chat_type)
     end
-
 end
