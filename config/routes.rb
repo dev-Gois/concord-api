@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   post "register", to: "users#register"
   post "login", to: "users#login"
+
+  resources :chat_rooms, only: [ :create ]
 end
