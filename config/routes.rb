@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   post "login", to: "users#login"
 
   resources :chat_rooms, only: [ :create ]
+
+  resources :messages, only: [ :create ]
 end
