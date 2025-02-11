@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   post "register", to: "users#register"
   post "login", to: "users#login"
+  get "users", to: "users#all"
 
   resources :chat_rooms, only: [ :create ]
 

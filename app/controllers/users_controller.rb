@@ -23,6 +23,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def all
+    users = User.all
+    render json: UserSerializer.new(users).serializable_hash.to_json, status: :ok
+  end
+
   private
 
   def register_params
