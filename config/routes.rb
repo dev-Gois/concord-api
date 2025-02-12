@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post "login", to: "users#login"
   get "users", to: "users#all"
 
-  resources :chat_rooms, only: [ :create ]
+  resources :chat_rooms, only: [ :create, :index ]
 
   resources :messages, only: [ :create ]
 end
