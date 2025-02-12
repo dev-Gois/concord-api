@@ -11,6 +11,7 @@ module ChatRooms
         raise "Members are required" unless members_params.present?
         add_admin
         add_members
+        context.chat_room = chat_room.reload
       rescue StandardError => e
         context.fail!(message: e.message)
       end

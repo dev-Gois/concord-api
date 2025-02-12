@@ -4,5 +4,4 @@ class ChatRoom < ApplicationRecord
     has_many :messages
 
     validates :name, presence: true
-    validates :chat_type, presence: true
 end

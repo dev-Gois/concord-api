@@ -1,14 +1,4 @@
 class ChatRoomsController < ApplicationController
-  def index
-    result = ChatRooms::Interactors::Index.call(user: @current_user)
-
-    if result.success?
-      render json: ChatRoomSerializer.new(result.chat_rooms).serializable_hash.to_json, status: :ok
-    else
-      render json: { errors: result.message }, status: :unprocessable_entity
-    end
-  end
-
   def create
     result = ChatRooms::Organizers::Create.call(
       user: @current_user,
@@ -26,7 +16,7 @@ class ChatRoomsController < ApplicationController
   private
 
   def chat_room_params
-    params.require(:chat_room).permit(:name, :chat_type)
+    params.require(:chat_room).permit(:name)
   end
 
   def members_params

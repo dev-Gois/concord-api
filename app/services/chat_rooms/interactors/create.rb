@@ -7,7 +7,6 @@ module ChatRooms
 
       def call
         raise "Chat room name is required" unless chat_room_params[:name].present?
-        raise "Chat room type is required" unless chat_room_params[:chat_type].present?
         context.chat_room = create
       rescue StandardError => e
         context.fail!(message: e.message)
