@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   private
 
   def register_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :color)
   end
 
   def login_params
